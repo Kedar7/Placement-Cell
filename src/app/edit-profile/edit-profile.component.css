@@ -1,0 +1,8 @@
+form label{
+  min-width: 200px;
+text-align: right;
+margin-right: 1rem;
+}
+form button{
+  margin-left:200px;
+}

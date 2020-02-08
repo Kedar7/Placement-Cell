@@ -1,0 +1,137 @@
+<h2><span *ngIf="type=='student'">Student</span><span *ngIf="type=='admin'">Admin</span><span *ngIf="type=='hr'">HR</span> Member registration</h2>
+<hr>
+<div class="alert alert-info">{{message}}</div>
+<form [formGroup]="memberForm" (ngSubmit)="formSubmit(memberForm.value)">
+  <div class="input" *ngIf="type=='student'">
+    <div class="row">
+<div class="col-md-2">
+    <label for="">Full name:</label>
+    </div>
+    <div class="col-md-4">
+    <input class="form-control"   style="border-radius:0;" type="text" formControlName="full_name" />
+    </div>
+    </div>
+  </div>
+
+  <div class="input" *ngIf="type=='student'">
+      <div class="row">
+          <div class="col-md-2">
+    <label for="">USN:</label>
+    </div>
+    <div class="col-md-4">
+    <input type="text" class="form-control"   style="border-radius:0;resize:none;" formControlName="usn" />
+    </div>
+    </div>
+  </div>
+  <div class="input" *ngIf="type=='student'">
+ <div class="row">
+      <div class="col-md-2">
+    
+    <label for="">Deparment:</label></div>
+    <div class="col-md-4">
+    <select formControlName="department_id" class="form-control"   style="border-radius:0;resize:none;" (change)="setDeptId($event.target.value)">
+      <option value="">Choose dept</option>
+      <option *ngFor="let d of departments" value='{{d.id}}'>{{d.name}}</option>
+    </select>
+  </div></div></div>
+
+  <div class="input" *ngIf="type=='student'">
+      <div class="row">
+          <div class="col-md-2">
+
+    <label for="">10th Percentage:</label>
+    </div>
+    <div class="col-md-4">
+    <input type="number" class="form-control"   style="border-radius:0;resize:none;"  min=1 max=100 maxLength=3 formControlName="tenth_pct" />
+  </div></div></div>
+
+  <div class="input" *ngIf="type=='student'">
+      <div class="row">
+          <div class="col-md-2">
+    
+    <label for="">12th Percentage:</label></div>
+    <div class="col-md-4">
+    
+    <input type="number" class="form-control"   style="border-radius:0;resize:none;" min=1 max=100 maxLength=3 formControlName="twelth_pct" />
+  </div></div></div>
+
+  <div class="input" *ngIf="type=='student'">
+      <div class="row">
+          <div class="col-md-2">
+    <label for="">BE Aggregate:</label>
+    </div>
+    <div class="col-md-4">
+    <input type="number" class="form-control"   style="border-radius:0;resize:none;"  min=1 max=100 maxLength=3 formControlName="be_pct" />
+  </div></div></div>
+
+
+  <div class="input" *ngIf="type=='hr'">
+      <div class="row">
+          <div class="col-md-2">
+    <label for="">Company name:</label>
+    </div>
+    <div class="col-md-4">
+    <input type="text"class="form-control"   style="border-radius:0;resize:none;"  formControlName="company_name" />
+  </div></div></div>
+
+
+  <div class="input">
+      <div class="row">
+          <div class="col-md-2">
+    <label for="">Email:</label>
+    </div>
+    <div class="col-md-4">
+    <input type="email" class="form-control"   style="border-radius:0;resize:none;" formControlName="email" />
+  </div></div></div>
+
+  <div class="input">
+      <div class="row">
+          <div class="col-md-2">
+    <label for="">Password:</label>
+    </div>
+    <div class="col-md-4">
+    <input type="password" class="form-control"   style="border-radius:0;resize:none;" formControlName="password" />
+  </div></div></div>
+
+  <div class="input">
+      <div class="row">
+          <div class="col-md-2">
+    <label for="">Confirm password:</label>
+    </div>
+    <div class="col-md-4">
+
+    <input type="password" class="form-control"   style="border-radius:0;resize:none;" formControlName="confirm_password" />
+  </div></div></div>
+
+  <div class="input">
+      <div class="row">
+          <div class="col-md-2">
+    <label for="">Phone:</label>
+    </div>
+    <div class="col-md-4">
+    <input type="text"class="form-control"   style="border-radius:0;resize:none;"  formControlName="phone" />
+  </div></div></div>
+
+  <div class="input"  *ngIf="type=='hr'">
+      <div class="row">
+          <div class="col-md-2">
+    <label for="">Calendar:</label>
+    </div>
+    <div class="col-md-4">
+    <input type="date" class="form-control"   style="border-radius:0;resize:none;" formControlName="date" />
+  </div></div></div>
+
+
+  <div class="input"  *ngIf="type=='hr'">
+      <div class="row">
+          <div class="col-md-2">
+    <label for="">Eligibility:</label>
+    </div>
+    <div class="col-md-4">
+    <input type="text" class="form-control"   style="border-radius:0;resize:none;" formControlName="eligibility" />
+  </div></div></div>
+
+  <button class="btn btn-success" [disabled]="!memberForm.valid">Register</button>
+
+
+</form>

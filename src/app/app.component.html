@@ -1,0 +1,40 @@
+<header>
+  <div class="container">
+    <div class="flexWrap space-between">
+      <div class="logo">
+        <span class='text-info'>KLSGIT PLACEMENT CELL </span>
+      </div>
+      <div class="menu text-right">
+        <button (click)="toggle()" class="btn btn-sm d-sm-none">Menu</button>
+        <ul class="menuUl " [ngClass]="{'open':toggleStatus}">
+          <li ><a routerLink="/home">Home</a></li>
+          <li *ngIf="loginStatus"><a routerLink="#0" (click)="logout()">Logout</a></li>
+          <li *ngIf="!loginStatus"><a routerLink="/login">Login</a></li>
+          <li *ngIf="!loginStatus"><a routerLink="#0">Sign Up</a>
+              <ul>
+                <li><a routerLink="#0" (click)="takeSignup('/sign-up/student')">Student Signup</a></li>
+                <li><a routerLink="#0" (click)="takeSignup('/sign-up/hr')">HR Signup</a></li>
+              </ul>
+          </li>
+          <li ><a routerLink="/contact-us">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<article>
+  <div class="container-fluid">
+    <div class="row">
+      <app-left-menu class="col-md-2" *ngIf="role == 'Admin'"></app-left-menu>
+      <div [ngClass]='{"col-md-12": role != "Admin", "col-md-10": role == "Admin" }'>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</article>
+
+<footer class='text-center'>
+  <p><small>A project by <strong>Kedar, Akash, Gurudev and Chetan</strong></small></p>
+</footer>

@@ -1,0 +1,10 @@
+table{
+  font-size:0.9rem;
+
+}
+.tableWrap{
+  overflow-x: scroll;
+overflow-y: scroll;
+height: 407px;
+}
+

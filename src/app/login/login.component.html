@@ -1,0 +1,49 @@
+<div class="">
+  <h1 class="text-info">Welcome, please login</h1>
+  <div class="alert alert-warning">{{loginStatus}}</div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form flexWrap">
+        <h2><strong>HR</strong></h2>
+
+        <form [formGroup]="hrLoginForm" (ngSubmit)="hrLogin(hrLoginForm.value)"  autocomplete="off">
+          <div class="input"><input type="text" class="form-control"   style="border-radius:0;" placeholder="Username" formControlName="username"></div>
+          <div class="input"><input class="form-control"   style="border-radius:0;" type="password" placeholder="Password" formControlName="password"></div>
+          <input type="hidden" formControlName="type" >
+          <div class="input">
+            <button class="btn btn-success" [disabled]="!hrLoginForm.valid" type="submit">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form flexWrap">
+        <h2><strong>Student</strong></h2>
+
+        <form [formGroup]="studentLoginForm" (ngSubmit)="studentLogin(studentLoginForm.value)" autocomplete="off">
+          <div class="input"><input  type="text"  class="form-control"   style="border-radius:0;" placeholder="Username" formControlName="username"></div>
+          <div class="input"><input type="password" class="form-control"   style="border-radius:0;"  placeholder="Password" formControlName="password"></div>
+          <input type="hidden" formControlName="type"  >
+          <div class="input">
+            <button class="btn btn-success" [disabled]="!studentLoginForm.valid" type="submit">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form flexWrap">
+        <h2><strong>Admin</strong></h2>
+        <form [formGroup]="adminLoginForm" (ngSubmit)="adminLogin(adminLoginForm.value)" autocomplete="off" >
+          <div class="input"><input type="text" class="form-control"   style="border-radius:0;" placeholder="Username" formControlName="username"></div>
+          <div class="input"><input type="password"  class="form-control"   style="border-radius:0;" placeholder="Password" formControlName="password"></div>
+          <input type="hidden" formControlName="type">
+          <div class="input">
+            <button class="btn btn-success" [disabled]="!adminLoginForm.valid" type="submit">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

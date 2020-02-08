@@ -1,0 +1,11 @@
+<h2>Book session</h2>
+
+<form  [formGroup]="bookForm" (ngSubmit)="formSubmit(bookForm.value)">
+  <div class="alert" [ngClass]="{'alert-primary':!disabled, 'alert-danger':disabled }">{{message}}</div>
+  <div class="input"><label for="">Choose date:</label><input formControlName="created"  type="date" (change)="isAvaliable($event.target.value)"/></div>
+
+  <div class="input">
+    <label for=""></label>
+    <button type="submit" [disabled]="disabled">Book</button>
+  </div>
+</form>

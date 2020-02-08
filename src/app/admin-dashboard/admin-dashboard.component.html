@@ -1,0 +1,66 @@
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Companies</h3>
+      <hr>
+    <div class="tableWrap">
+      <table class="table table-bordered table-sm">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Company</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Schedule</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let h of hrData;let i = index">
+            <td>{{i+1}}</td>
+            <td>{{h?.company_name}}</td>
+            <td>{{h?.phone}}</td>
+            <td>{{h?.email}}</td>
+            <td>{{h.schedule | date }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    </div>
+    <div class="col-md-8">
+      <h3>Students</h3>
+      <hr>
+
+      <div class="tableWrap">
+        <table class="table table-bordered table-sm">
+          <thead>
+            <tr>
+              <th colspan="4"><div class="flexWrap"><span>
+                <label for="">Deparment:</label>
+                <select (change)="search($event.target.value)" [(ngModel)]="department_id">
+                  <option value="">Choose dept</option>
+                  <option *ngFor="let d of departments" value='{{d.id}}'>{{d.name}}</option>
+                </select>
+
+              </span><div>Percentage criteria: </div><input  [(ngModel)]="searchTerm" (change)="search($event.target.value)" (keyup)="search($event.target.value)" type="number" min="1" max="100"  placeholder='percentage'></div></th>
+            </tr>
+            <tr>
+              <th>S.No</th>
+              <th>Full name</th>
+              <th>USN</th>
+              <th>Hired Status</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr *ngFor="let u of filteredStudents;let counter = index">
+              <td>{{counter+1}}</td>
+              <td>{{u?.full_name}}</td>
+              <td>{{u?.usn}}</td>
+              <td><span *ngIf="u.hired_status">Placed</span><span *ngIf="!u?.hired_status">Unplaced</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>

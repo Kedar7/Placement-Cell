@@ -1,0 +1,9 @@
+
+.flexWrap{
+  justify-content: flex-end;
+}
+.wrap{
+  background: rgba(255,255,255,0.7);
+  border-radius:1rem;
+  padding:2rem;
+}

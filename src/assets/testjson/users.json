@@ -1,0 +1,55 @@
+{
+  "result":[
+    {
+        "company_name":"L&T",
+        "email":"hr@lnt.com",
+        "phone":"895100010",
+        "role":"hr",
+        "username":"ltlogin",
+        "password":"123123",
+        "eligibility":"10th 80, 12th 80, BE 80",
+        "calendar":"27-03-2018"
+    },
+
+    {
+        "company_name":"TCS",
+        "email":"hr@tcs.com",
+        "phone":"7373737377",
+        "role":"hr",
+        "username":"tcslogin",
+        "password":"123123",
+        "eligibility":"10th 70, 12th 70, BE 70",
+        "calendar":"20-03-2018"
+    },
+
+    {
+        "company_name":"Infosys",
+        "email":"hr@infosys.com",
+        "phone":"8989898989",
+        "role":"hr",
+        "username":"infosyslogin",
+        "password":"123123",
+        "eligibility":"10th 70, 12th 70, BE 60",
+        "calendar":"21-03-2018"
+    },
+
+    {
+        "company_name":"Tech Mahindra",
+        "email":"hr@techmahindra.com",
+        "phone":"777777777",
+        "role":"hr",
+        "username":"techlogin",
+        "password":"123123",
+        "eligibility":"10th 60, 12th 60, BE 60",
+        "calendar":"22-03-2018"
+    },
+    {
+      "name":"Kedar",
+      "username":"admin",
+      "password":"123123",
+      "role":"admin"
+
+    }
+
+  ]
+}

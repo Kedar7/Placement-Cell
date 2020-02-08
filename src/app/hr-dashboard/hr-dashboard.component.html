@@ -1,0 +1,84 @@
+<ul class="nav">
+  <li><a routerLink="/book-session/{{hr_id}}">Book Session</a></li>
+</ul>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th colspan="8">
+        <div class="flexWrap"><span>
+            <label for="">Deparment:</label>
+            <select (change)="search($event.target.value)" [(ngModel)]="department_id">
+              <option value="">Choose dept</option>
+              <option>}</option>
+            </select>
+
+          </span><span>Minimum percentage criteria: </span><input [(ngModel)]="searchTerm"
+            type="number" min="1" max="100"
+            placeholder='percentage'></div>
+      </th>
+    </tr>
+    <tr>
+      <th>S.No</th>
+      <th>Full name</th>
+      <th>USN</th>
+      <th>Dept</th>
+      <th>10th</th>
+      <th>12th</th>
+      <th>BE Aggregate</th>
+      <th>Hired Status</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <!-- <tr *ngFor="let u of filteredStudents;let counter = index">
+      <td>{{counter+1}}</td>
+      <td>{{u?.full_name}}</td>
+      <td>{{u?.usn}}</td>
+      <td>{{u?.name}}</td>
+      <td>{{u?.tenth_pct}}</td>
+      <td>{{u?.twelth_pct}}</td>
+      <td>{{u?.be_pct}}</td>
+      <td><label for='{counter}}'><input [attr.checked]="u.hired_status ? '' : null" type="checkbox" (click)="updateStatus($event, u?.id)" id='{{counter}}' /> Hired[]</label></td>
+    </tr> -->
+    <tr>
+      <td>1</td>
+      <td>Kedar Kulkarni</td>
+      <td>2gi14cs061</td>
+      <td>Kedar</td>
+      <td>PASS</td>
+      <td>PASS</td>
+      <td>PASS</td>
+      <td><label><input > </label></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Akash Nayak</td>
+      <td>2gi14cs018</td>
+      <td>Akash</td>
+      <td>PASS</td>
+      <td>PASS</td>
+      <td>PASS</td>
+      <td><label><input ></label></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Gurudev</td>
+      <td>2gi14cs054</td>
+      <td>Guru</td>
+      <td>PASS</td>
+      <td>PASS</td>
+      <td>PASS</td>
+      <td><label><input> </label></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Chetan</td>
+      <td>2gi14cs054</td>
+      <td>Chetan</td>
+      <td>PASS</td>
+      <td>PASS</td>
+      <td>PASS</td>
+      <td><label><input></label></td>
+    </tr>
+  </tbody>
+</table>

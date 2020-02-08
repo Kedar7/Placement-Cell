@@ -1,0 +1,45 @@
+<div class="alert alert-info">{{message}}</div>
+{{ memberForm | json }}
+<form [formGroup]="memberForm" (ngSubmit)="formSubmit(memberForm.value)">
+  <div class="input" >
+    <label for="">Full name:</label><input type="text" formControlName="full_name" />
+  </div>
+
+  <div class="input">
+    <label for="">USN:</label><input type="text" formControlName="usn" />
+  </div>
+  <div class="input" >
+    <label for="">Deparment:</label>
+    <select formControlName="department_id" >
+      <option value="">Choose dept</option>
+      <option *ngFor="let d of departments" value='{{d.id}}'>{{d.name}}</option>
+    </select>
+  </div>
+
+  <div class="input" >
+    <label for="">10th Percentage:</label><input type="number" min=1 max=100 maxLength=3 formControlName="tenth_pct" />
+  </div>
+
+  <div class="input" >
+    <label for="">12th Percentage:</label><input type="number" min=1 max=100 maxLength=3 formControlName="twelth_pct" />
+  </div>
+
+  <div class="input" >
+    <label for="">BE Aggregate:</label><input type="number" min=1 max=100 maxLength=3 formControlName="be_pct" />
+  </div>
+
+
+  <div class="input">
+    <label for="">Email:</label><input type="email" formControlName="email" />
+  </div>
+
+  <div class="input">
+    <label for="">Phone:</label><input type="text" formControlName="phone" />
+  </div>
+
+
+
+
+  <button class="btn btn-success" [disabled]="!memberForm.valid">Register</button>
+
+</form>
